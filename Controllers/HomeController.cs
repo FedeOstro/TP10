@@ -9,4 +9,8 @@ public class HomeController : Controller
         ViewBag.ListaSeries = BD.ListarSeries();
         return View();
     }
+
+    public List<Actores> ListaActores(int IdSerie){
+        return BD.ListarActores(IdSerie);
+    }
 }

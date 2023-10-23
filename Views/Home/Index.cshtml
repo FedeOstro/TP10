@@ -18,11 +18,29 @@
             <div class="card-body">
                 <h5 class="card-title">@serie.Nombre</h5>
                 <a href="#" class="btn btn-primary">Temporadas</a>
-                <button type="button" class="btn btn-secondary">Actores</button>
+                <button type="button" class="btn btn-secondary" data-bs-toggle="modal" data-bs-target="#ModalActores" onclick="MostrarActores(@serie.IdSerie, '@serie.Nombre')">Actores</button>
                 <button type="button" class="btn btn-warning">Mas Info</button>
             </div>
         </div>
     }
     </div>
 </body>
+
+<div id="ModalActores" class="modal" tabindex="-1">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="NombreSerie">Modal Title</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <p id="ListaActores">Modal body text goes here.</p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
+
 </html>

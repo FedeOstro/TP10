@@ -10,5 +10,14 @@ public static class BD{
             ListaSeries = db.Query<Series>(sql).ToList();
         }
         return ListaSeries;
+    }   
+
+    public static List<Actores> ListarActores(int IdSerie){
+        List<Actores> ListaActores = new List<Actores>();
+        using (SqlConnection db = new SqlConnection(_connectionString)){
+            string sql = "SELECT Nombre FROM Actores WHERE IdSerie = @cIdSerie";
+            ListaActores = db.Query<Actores>(sql, new{cIdSerie = IdSerie}).ToList();
+        }
+        return ListaActores;
     }    
 }

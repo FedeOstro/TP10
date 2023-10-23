@@ -1,0 +1,28 @@
+﻿@{
+    ViewData["Title"] = "Index";
+}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Vienvenido a series OstroÑete</h1>
+    <h4>Toda la informacion de tus series favoritas</h4>
+    <div class="Series">
+    @foreach(Series serie in ViewBag.ListaSeries){
+        <div class="card" style="width: 18rem;">
+            <img src=@serie.ImagenSerie class="card-img-top" alt="Porqueeeeeeeeeeeeeeeeeeeeeeee">
+            <div class="card-body">
+                <h5 class="card-title">@serie.Nombre</h5>
+                <a href="#" class="btn btn-primary">Temporadas</a>
+                <button type="button" class="btn btn-secondary">Actores</button>
+                <button type="button" class="btn btn-warning">Mas Info</button>
+            </div>
+        </div>
+    }
+    </div>
+</body>
+</html>

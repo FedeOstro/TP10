@@ -13,4 +13,12 @@ public class HomeController : Controller
     public List<Actores> ListaActores(int IdSerie){
         return BD.ListarActores(IdSerie);
     }
+
+    public List<Temporadas> ListaTemp(int IdSerie){
+        return BD.ListarTemp(IdSerie);
+    }
+
+    public String SacarSinopsis(int IdSerie){
+        return BD.Sinopsis(IdSerie);
+    }
 }

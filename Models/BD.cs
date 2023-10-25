@@ -2,7 +2,7 @@ using System.Data.SqlClient;
 using Dapper;
 using System.Collections.Generic; 
 public static class BD{
-    private static string _connectionString = @"SERVER=localhost;DataBase=BDSeries;Trusted_Connection=True;";
+    private static string _connectionString = @"SERVER=FEDE-GAMMER\SQLEXPRESS;DataBase=BDSeries;Trusted_Connection=True;";
     public static List<Series> ListarSeries(){
         List<Series> ListaSeries = new List<Series>();
         using (SqlConnection db = new SqlConnection(_connectionString)){
@@ -30,11 +30,12 @@ public static class BD{
         return ListaTemp;
     }   
 
-    public static string Sinopsis(int IdSerie){
+    public static Series DataSerie(int IdSerie){
+    Series s = null;
     using (SqlConnection db = new SqlConnection(_connectionString)){
-        string sql = "SELECT Sinopsis FROM Series WHERE IdSerie = @cIdSerie";
-        string sinopsis = db.QueryFirstOrDefault<string>(sql, new { cIdSerie = IdSerie });
-        return sinopsis;
+        string sql = "SELECT * FROM Series WHERE IdSerie = @cIdSerie";
+        s = db.QueryFirstOrDefault<Series>(sql, new { cIdSerie = IdSerie });
+        return s;
     }
 }  
 }

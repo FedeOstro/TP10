@@ -18,7 +18,7 @@ public class HomeController : Controller
         return BD.ListarTemp(IdSerie);
     }
 
-    public String SacarSinopsis(int IdSerie){
-        return BD.Sinopsis(IdSerie);
+    public Series DataSerie(int IdSerie){
+        return BD.DataSerie(IdSerie);
     }
 }

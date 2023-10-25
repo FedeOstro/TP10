@@ -45,13 +45,13 @@ function MostrarSinopsis(IdSerie, Nombre){
     {
       type: 'POST',
       dataType: 'JSON',
-      url: '/Home/SacarSinopsis',
+      url: '/Home/DataSerie',
       data: {IdSerie: IdSerie},
       success:
         function(response){
-          console.log(response)
           $("#NombreSerie").html(Nombre)
-          $("#Sinopsis").html(response)
+          $("#Sinopsis").html(response.sinopsis)
+          $("#AñoInicio").html("La serie empezo el año " + response.añoinicio)
         }
     }
   )
